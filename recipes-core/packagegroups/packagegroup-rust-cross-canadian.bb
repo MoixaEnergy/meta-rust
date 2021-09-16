@@ -9,10 +9,9 @@ RUST="rust-cross-canadian-${TRANSLATED_TARGET_ARCH}"
 CARGO="cargo-cross-canadian-${TRANSLATED_TARGET_ARCH}"
 RUST_TOOLS="rust-tools-cross-canadian-${TRANSLATED_TARGET_ARCH}"
 
-RDEPENDS:${PN} = " \
+RDEPENDS_${PN} = " \
     ${@all_multilib_tune_values(d, 'RUST')} \
     ${@all_multilib_tune_values(d, 'CARGO')} \
     rust-cross-canadian-src \
     ${@all_multilib_tune_values(d, 'RUST_TOOLS')} \
 "
-

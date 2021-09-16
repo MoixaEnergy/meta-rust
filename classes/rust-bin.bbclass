@@ -1,6 +1,6 @@
 inherit rust
 
-RDEPENDS:${PN}:append:class-target = " ${RUSTLIB_DEP}"
+RDEPENDS:${PN}_append_class-target = " ${RUSTLIB_DEP}"
 
 RUSTC_ARCHFLAGS += "-C opt-level=3 -g -L ${STAGING_DIR_HOST}/${rustlibdir} -C linker=${RUST_TARGET_CCLD}"
 EXTRA_OEMAKE += 'RUSTC_ARCHFLAGS="${RUSTC_ARCHFLAGS}"'
@@ -146,4 +146,3 @@ do_rust_bin_fixups() {
     done
 }
 PACKAGE_PREPROCESS_FUNCS += "do_rust_bin_fixups"
-
